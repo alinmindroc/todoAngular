@@ -1,0 +1,18 @@
+<ul>
+    <li ng-class="getClass(item)" ng-click="check(item)" ng-repeat="item in listItems"
+        style="cursor: pointer; cursor: hand">{{item.name}}
+        <button ng-click="deleteItem(item)" style="color: red; float: right; margin-right: 10px">X</button>
+    </li>
+</ul>
+
+<div style="text-align: center">
+    <form ng-submit="addItem(itemToAdd)">
+        <input ng-model="itemToAdd" style="width: 80%" placeholder="new item"
+               type="text">
+    </form>
+    </br>
+
+    <span ng-click="filter('completed')" style="cursor: pointer; cursor: hand">Completed</span>
+    <span ng-click="filter('active')" style="cursor: pointer; cursor: hand">Active</span>
+    <span ng-click="filter('all')" style="cursor: pointer; cursor: hand">All</span>
+</div>
