@@ -1,0 +1,20 @@
+<ul>
+    <li ng-class="getCLass(item)" ng-repeat="item in allItems | filter: {done: someBool}" ng-click="check(item)">
+        {{item.name}}
+        <span ng-click="delete(item)" style="color:red; float: right" class="glyphicon glyphicon-remove"></span>
+    </li>
+</ul>
+
+<div class="input-group">
+    <span class="input-group-addon">item</span>
+
+    <form ng-submit="addItem(itemToAdd); itemToAdd=''">
+        <input class="form-control" type="text" ng-model="itemToAdd">
+    </form>
+</div>
+
+</br>
+
+<button class="btn btn-success" type="button" ng-click="someBool = true">Show completed</button>
+<button class="btn btn-danger" type="button" ng-click="someBool = false">Show not completed</button>
+<button class="btn btn-info" type="button" ng-click="someBool = undefined">Show all</button>
