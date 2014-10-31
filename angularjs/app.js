@@ -1,9 +1,9 @@
-angular.module('todomvc', ['ngRoute'])
+angular.module('example', ['ngRoute'])
     .config(function ($routeProvider) {
         'use strict';
         $routeProvider.when('/', {
-            controller: 'TodoCtrl',
-            templateUrl: 'views/listView.html'
+            controller: 'ctrl1',
+            templateUrl: 'views/exampleView.html'
         }).otherwise({
             redirectTo: '/'
         });
