@@ -1,0 +1,29 @@
+<ol>
+    <li ng-class="item.done == false ? 'green' : 'grey'" ng-repeat="item in arr | filter: {done: isDone}">
+        <div ng-show="editing == false">
+            <span ng-click="switch(item)" ng-class="item.done == true ? 'green' : 'grey'"
+                  class="glyphicon glyphicon-ok"></span>
+            <span ng-click="editing = true; text=item.name" ng-class="item.done == true ? 'cut-text' : ''"> {{item.name}}</span>
+            <span ng-click="remove(item)" style="float:right; color:red" class="glyphicon glyphicon-remove"></span>
+        </div>
+        <div ng-show="editing">
+            <form ng-submit="edit(item, text); editing = false">
+                <input ng-model="text" type="text">
+            </form>
+        </div>
+    </li>
+</ol>
+
+<div class="input-group">
+    <span class="input-group-addon">item to add:</span>
+
+    <form ng-submit="add(textInput); textInput=''">
+        <input class="form-control" ng-model="textInput" type="text">
+    </form>
+</div>
+
+</br>
+
+<button ng-click="isDone = true" class="btn btn-success" type="button">Show done</button>
+<button ng-click="isDone = false" class="btn btn-danger" type="button">Show active</button>
+<button ng-click="isDone = undefined" class="btn btn-info" type="button">Show all</button>

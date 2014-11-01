@@ -6,12 +6,12 @@
     color: red;
 }
 
-li:hover {
-    background-color: #acacac;
+.grey {
+    color: gray;
 }
 
-li.clicked {
-    background-color: #96d200;
+.cut-text{
+    text-decoration: line-through;
 }
 
 body {
