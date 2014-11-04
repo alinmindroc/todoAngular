@@ -1,5 +1,5 @@
 <ol>
-    <li ng-class="item.done == false ? 'green' : 'grey'" ng-repeat="item in arr | filter: {done: isDone}">
+    <li ng-class="item.done == false ? 'green' : 'grey'" ng-repeat="item in arr | filter: {done: isDone} track by $index">
         <div ng-show="editing == false">
             <span ng-click="switch(item)" ng-class="item.done == true ? 'green' : 'grey'"
                   class="glyphicon glyphicon-ok"></span>
