@@ -20,13 +20,16 @@ angular.module('example')
 
         $scope.edit = function (item, text) {
             $scope.arr[$scope.arr.indexOf(item)].name = text;
+            todoStorage.put($scope.arr);
         };
 
         $scope.remove = function (item) {
             $scope.arr.splice($scope.arr.indexOf(item), 1);
+            todoStorage.put($scope.arr);
         };
 
         $scope.switch = function (item) {
             item.done = !item.done;
+            todoStorage.put($scope.arr);
         };
     });
